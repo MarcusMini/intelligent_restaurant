@@ -1,0 +1,16 @@
+<ion-popover-view class="pop" ng-controller="PopUpCtrl">
+		<div id="header-clock">
+			<div id="hour-clock">
+				<button ng-click="detectInput(true)"><span ng-model="UserInput" ng-class="{'hour-span': UserInput}"><h1>{{timeSetting.hour}}</h1></span></button>
+				<h1>:</h1>
+				<button ng-click="detectInput(false)"><span ng-model="UserInput" ng-class="{false:'hour-span'}[UserInput]"><h1>{{timeSetting.minutes}}</h1></span></button>
+			</div>
+		</div>
+		<div id="pop_container">
+			<div id="setClock">
+				<i ng-if="setData < timeSetting.max" class="icon ion-ios-arrow-up" ng-click="Up()"></i>
+				<h2 ng-model="setData">{{setData}}</h2>
+				<i ng-if="setData > timeSetting.min" class="icon ion-ios-arrow-down" ng-click="Down()"></i>
+			</div>
+		</div>
+</ion-popover-view>

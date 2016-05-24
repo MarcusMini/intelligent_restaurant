@@ -1,0 +1,142 @@
+<ion-content>
+
+<div id="preference">
+		<div id="firstCloud"></div>
+		<div id="cloud_container">
+			<div class="secondCloud"></div>
+			<div class="secondCloud"></div>
+		</div>
+		<h1>Préférence</h1>
+		<div class="list list-inset">
+			<label class="item item-input pref_label item-select" >
+					<div class="input-label pref">
+						First taste
+					</div>
+					<select ng-model="value.first_taste">
+						<option>Salty</option>
+						<option selected>Sour</option>
+						<option>Bitter</option>
+						<option>Sweet</option>
+						<option>Umani</option>
+					</select>
+			</label>
+			<label class="item item-input pref_label item-select" >
+				<div class="input-label pref">
+						Second taste
+					</div>
+					<select ng-model="value.second_taste">
+						<option>Salty</option>
+						<option>Sour</option>
+						<option>Bitter</option>
+						<option selected>Sweet</option>
+						<option>Umani</option>
+					</select>
+			</label>
+			<!-- for the moment it is hide, using the add button will reveal the third one and the fourth one if the user click again on the button -->
+			<label class="item item-input pref_label item-select"  ng-if="add > 0" >
+				<div class="input-label pref">
+						By Price
+					</div>
+					<select ng-model="value.third_taste">
+						<option>5 - 10</option>
+						<option selected>10 - 20</option>
+						<option>20 - 30</option>
+						<option>30 - 50</option>
+						<option>50 - more</option>
+					</select>
+			</label>
+			<label class="item item-input pref_label item-select" ng-if="add > 1" >
+				<div class="input-label pref">
+						By Region
+					</div>
+					<select ng-model="value.fourth_taste">
+						<option>West Europe</option>
+						<option selected>Northern Europe</option>
+						<option>Southern Europe</option>
+						<option>East Asia</option>
+						<option>Northern South-East Asia</option>
+						<option>Southern South-east Asia</option>
+						<option>South Asia</option>
+						<option>Northern africa</option>
+						<option>Central and southern africa</option>
+						<option>Middle East</option>
+						<option>Northern America</option>
+						<option>South America</option>
+					</select>
+			</label>
+		</div>
+		<div id="add_button" ng-click="addInput()"><h1>+</h1></div>
+		<div class="list list-inset" id="second_ch">
+			<label class="item item-input pref_label">
+				<input type="text" placeholder="What type of meal ?" ng-model="value.type_of_meal">
+			</label>
+			<ul class="ul-el veganTog" id="pref_toggle">
+				<li class="item item-toggle toggle-set">
+					<p>Are you vegan</p>
+					<label class="toggle toggle-assertive" >
+					<input type="checkbox" ng-model="value.vegan">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+					</label>
+				</li>
+			</ul>
+			<div id="pref-user">
+				<p>Improving result acccuracy by activate the following parameters</p>
+				<ul class="ul-el" id="pref_toggle">
+					<li class="item item-toggle toggle-set">
+						<p>Luminosity detection</p>
+						<label class="toggle toggle-assertive" >
+							<input type="checkbox" ng-model="value.luminosity">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<li class="item item-toggle toggle-set">
+						<p>Location</p>
+						<label class="toggle toggle-assertive" >
+							<input type="checkbox" ng-model="value.location">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<li class="item item-toggle toggle-set">
+						<p>Weather detection</p>
+						<label class="toggle toggle-assertive" >
+							<input type="checkbox" ng-model="value.weather">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div id="hour_container">
+				<div class="time">
+					<ul class="list" id="itemP">
+						<div class="wrap-pref" ng-click="setHour(1)">
+							<p>Lunch</p>
+							<div id="mid" >
+								<p class="underline">{{time[0]}}</p>
+								<p>:</p>
+								<p class="underline">{{time[2]}}</p>
+							</div>
+						</div>
+						<div class="wrap-pref" ng-click="setHour(2)">
+							<p>Dinner</p>
+							<div id="night">
+								<p class="underline">{{time[1]}}</p>
+								<p>:</p>
+								<p class="underline">{{time[3]}}</p>
+							</div>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="button" ng-click="setPref()" id="pref_button"><p>Next</p></div>
+</div>
+
+</ion-content>
